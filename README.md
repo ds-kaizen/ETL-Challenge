@@ -35,11 +35,12 @@ We want a deployment for the ETL, please remember that best deployments are the 
 ## Data Dictionary
 The EPL data has season information from 2009-10 to 18-19
 
-        Data Dictionary
+Data Dictionary
         	
 Abbreviation 	Description
 --- 	        ---
 Div 	        League Division
+
 Date 	        Match Date (dd/mm/yy)
 HomeTeam 	    Home Team
 AwayTeam 	    Away Team
