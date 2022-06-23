@@ -1,0 +1,51 @@
+---
+# this config file is where we configure all the variable parameters for our ETL job process.
+# please add or edit parameters only when we really need to other wise it will result in job failure.
+# 
+basepath : C:/Users/aashishj/Documents/jefferies/etl-challenge-v1-dsr/
+inbound : data/
+outbound : reports/
+log : log/
+
+# valid column list
+valid_col_ls : [Div, Date, HomeTeam, AwayTeam, FTHG, FTAG, FTR, HTHG, HTAG, HTR, Referee, HS, AS, HST, AST, HC, AC, HF, AF, HY, AY, HR, AR, Season]
+
+# column rename
+col_rename :
+  'Div' : 'LeagueDivision'
+  'Date' : 'MatchDate'
+  'HomeTeam' : 'HomeTeam'
+  'AwayTeam' : 'AwayTeam'
+  'FTHG' : 'FullTimeHomeTeamGoals'
+  'FTAG' : 'FullTimeAwayTeamGoals'
+  'FTR' : 'FullTimeResult'
+  'HTHG' : 'HalfTimeHomeTeamGoals'
+  'HTAG' : 'HalfTimeAwayTeamGoals'
+  'HTR' : 'HalfTimeResult'
+  'Referee' : 'MatchReferee'
+  'HS' : 'HomeTeamShots'
+  'AS' : 'AwayTeamShots'
+  'HST' : 'HomeTeamShotsonTarget'
+  'AST' : 'AwayTeamShotsonTarget'
+  'HHW' : 'HomeTeamHitWoodwork'
+  'AHW' : 'AwayTeamHitWoodwork'
+  'HC' : 'HomeTeamCorners'
+  'AC' : 'AwayTeamCorners'
+  'HF' : 'HomeTeamFoulsCommitted'
+  'AF' : 'AwayTeamFoulsCommitted'
+  'HY' : 'HomeTeamYellowCards'
+  'AY' : 'AwayTeamYellowCards'
+  'HR' : 'HomeTeamRedCards'
+  'AR' : 'AwayTeamRedCards'
+
+col_seq : 
+  - club
+  - matches_played
+  - wins
+  - draw
+  - loss
+  - goals_for
+  - goals_against
+  - goal_difference
+  - points
+  - season
