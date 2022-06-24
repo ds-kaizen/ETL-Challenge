@@ -210,6 +210,9 @@ class epl_league:
             ascending=[False, False, True, True],
         ).drop(["goal_difference_le", "goal_difference_abs"], axis=1)
 
+        # adding club ranking column
+        league_table["rank"] = league_table.groupby("season")['season'].rank("first", ascending=True)
+
         # arranging column sequence
         league_table = league_table[col_seq]
 
@@ -219,8 +222,11 @@ class epl_league:
         """Load: this method will create dataframe for best scoring team by season"""
 
         champion_table = league_table.loc[
-            league_table.groupby(["season"])["points"].idxmax()
+            league_table.groupby(["season"])["goals_for"].idxmax()
         ].sort_values(["season"], ascending=False)
+
+        # dropping 'rank' column
+        champion_table = champion_table.drop('rank', axis=1)
 
         return champion_table
 
@@ -278,6 +284,10 @@ class epl_league:
 
             self.write_excel(league_table, champion_table)
 
+            logger.info(
+        "*************************EPL ETL Challenge program completed successfully************************* \n"
+    )
+
         except Exception as e:
             logging.error("Exception occured", exc_info=True)
             logger.info(f"ETL Process Failed, fix the issue and rerun!! \n")
@@ -317,7 +327,3 @@ if __name__ == "__main__":
 
     p = epl_league(file_list)
     p.main()
-
-    logger.info(
-        "*************************EPL ETL Challenge program completed successfully************************* \n"
-    )
