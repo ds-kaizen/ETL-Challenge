@@ -101,4 +101,4 @@ we will follow the same appraoch in our job development process. Detailing out e
 ![EPL ETL Data Model](Data_Model.png)
 
 ## Deployment
-Follow Deployment steps in deployment.md in deploy folder
+We will be using docker for this project and deployment instructions are mentioned in deployment.md of the deploy folder
