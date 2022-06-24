@@ -39,6 +39,7 @@ col_rename :
   'AR' : 'AwayTeamRedCards'
 
 col_seq : 
+  - rank
   - club
   - matches_played
   - wins
