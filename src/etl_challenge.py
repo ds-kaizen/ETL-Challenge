@@ -30,7 +30,7 @@ class epl_league:
         self.file_list = file_list
 
     def read_input_json_file(self, file_list):
-        """this method will read all the input json file from input 'data' folder"""
+        """Extract: this method will read all the input json file from input 'data' folder"""
 
         epl_df = []
         for f in file_list:
@@ -46,21 +46,21 @@ class epl_league:
         return epl_df
 
     def drop_bad_cols(self, epl_df):
-        """this method will drop all the columns which is not required for job processing"""
+        """Extract: this method will drop all the columns which is not required for job processing"""
 
         epl_df = epl_df[valid_col_ls]
 
         return epl_df
 
     def rename_cols(self, epl_df):
-        """this method will renaming columns to make it more readable"""
+        """Extract: this method will renaming columns to make it more readable"""
 
         epl_df.rename(columns=col_rename, inplace=True)
 
         return epl_df
 
     def points(self, epl_df):
-        """ this method will add columns which will keep track of points won or lost by a team"""
+        """Transformation: this method will add columns which will keep track of points won or lost by a team"""
 
         for i, recs in epl_df.iterrows():
             if recs["FullTimeResult"] == "H":
@@ -79,7 +79,7 @@ class epl_league:
         return epl_df
 
     def home_team(self, epl_df):
-        """this method will create dataframe for home team"""
+        """Transformation: this method will create dataframe for home team"""
 
         groupby_cols = ["HomeTeam", "Season", "LeagueDivision"]
 
@@ -109,7 +109,7 @@ class epl_league:
         return epl_df_home
 
     def away_team(self, epl_df):
-        """this method will create dataframe for away team"""
+        """Transformation: this method will create dataframe for away team"""
 
         groupby_cols = ["AwayTeam", "Season", "LeagueDivision"]
 
@@ -139,7 +139,7 @@ class epl_league:
         return epl_df_away
 
     def league_table(self, epl_df_home, epl_df_away):
-        """this method will concat home_team dataframe with away_team dataframe to create EPL position table"""
+        """Transformation: this method will concat home_team dataframe with away_team dataframe to create EPL position table"""
 
         # to concat away_team and home_team, first we need to rename columns.
         col_rename_home = {
@@ -216,7 +216,7 @@ class epl_league:
         return league_table
 
     def best_scoring_team_by_season(self, league_table):
-        """this method will create dataframe for best scoring team by season"""
+        """Load: this method will create dataframe for best scoring team by season"""
 
         champion_table = league_table.loc[
             league_table.groupby(["season"])["points"].idxmax()
@@ -225,7 +225,7 @@ class epl_league:
         return champion_table
 
     def write_excel(self, league_table, champion_table):
-        """this methos will write output into excel file"""
+        """Load: this method will write output into excel file"""
 
         writer_league = pd.ExcelWriter(
             basepath + outbound + "/EPL_League.xlsx",
