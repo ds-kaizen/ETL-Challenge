@@ -97,5 +97,5 @@ we will follow the same appraoch in our job development process. Detailing out e
 1. Once the data transformation is complete, output file will be generated.
 2. Output file is in excel format as it is easy to filter data and read.
 
-### EPL ETL Data Model
+### EPL ETL Data Flow
 ![EPL ETL Data Model](Data_Model.png)
