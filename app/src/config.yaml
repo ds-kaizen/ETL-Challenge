@@ -2,7 +2,7 @@
 # this config file is where we configure all the variable parameters for our ETL job process.
 # please add or edit parameters only when we really need to other wise it will result in job failure.
 # 
-basepath : C:/Users/aashishj/Documents/jefferies/etl-challenge-v1-dsr/
+basepath : C:/Users/aashishj/Documents/ETL-Challenge/app/
 inbound : data/
 outbound : reports/
 log : log/

@@ -8,7 +8,7 @@ import logging
 import yaml
 
 with open(
-    "src/config.yaml", "r"
+    "app/src/config.yaml", "r"
 ) as stream:
     try:
         config = yaml.safe_load(stream)
