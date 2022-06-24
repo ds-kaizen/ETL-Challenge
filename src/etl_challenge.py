@@ -8,7 +8,7 @@ import logging
 import yaml
 
 with open(
-    "C:/Users/aashishj/Documents/jefferies/etl-challenge-v1-dsr/src/config.yaml", "r"
+    "src/config.yaml", "r"
 ) as stream:
     try:
         config = yaml.safe_load(stream)
