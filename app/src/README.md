@@ -99,3 +99,6 @@ we will follow the same appraoch in our job development process. Detailing out e
 
 ### EPL ETL Data Flow
 ![EPL ETL Data Model](Data_Model.png)
+
+## Deployment
+Follow Deployment steps in deployment.md in deploy folder
