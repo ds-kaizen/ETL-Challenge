@@ -32,7 +32,7 @@ Show the overall architecture of your pipeline. Include all the steps of the wor
 We want a deployment for the ETL, please remember that best deployments are the easiest to execute.
 
 ## Data Dictionary
-The EPL data has season information from 2009-10 to 18-19
+The EPL data has season information from 2009-10 to 2018-19.
 
 Data Dictionary
 
@@ -83,3 +83,10 @@ we will follow the same appraoch in our job development process. Detailing out e
 2. We will write Python code to iterate through each file and create a DataFrame.
 3. There are many columns which are not required for our ETL process. we will remove them from our DataFrame.
 4. We will check the datatype of each columns and date format of date column and see if it require any fixing.
+
+### Transform
+1. In transformation step, required logic will be implemented to derive desired result.
+2. We will create two new dataframe which will hold information about home team and away team.
+3. Using information from existing columns, we will create new columns which will hold information regarding Points earned, game win/loss/draw, total matches played etc.
+4. Once we have all required information to create position table and to find best scoring team for all the seasons, we will concat away team dataframe with home team dataframe to generate desired results.
+
