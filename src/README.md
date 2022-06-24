@@ -22,7 +22,6 @@ The teams that finish in the bottom three of the league table at the end of the 
 Those teams are replaced by three clubs promoted from the Championship; the sides that finish in first and second place and the third via the end-of-season playoffs.
 
 ## About the Challenge
-You are hired as the Data Engineer to process and stage the raw data for all seasons.
 
 You need to create an ETL job that prepares the data for the EPL Research team. Please consider the following:
     The Job must be an ETL code developed in Python.
@@ -80,7 +79,7 @@ The ETL process broadly goes thru three stages:
 we will follow the same appraoch in our job development process. Detailing out each step:
 
 ### Extract
-1. we have already been provided with EPL season data in json file. Each file contains the complete information about the season's game.
-2. we will write Python code to iterate thru each file and create a DataFrame.
+1. We have already been provided with EPL season data in json file. Each file contains the complete information about the season's game.
+2. We will write Python code to iterate through each file and create a DataFrame.
 3. There are many columns which are not required for our ETL process. we will remove them from our DataFrame.
-4. we will check the datatype of each columns and date format of date column and see if it require any fixing.
+4. We will check the datatype of each columns and date format of date column and see if it require any fixing.
