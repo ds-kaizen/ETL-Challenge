@@ -90,4 +90,8 @@ we will follow the same appraoch in our job development process. Detailing out e
 3. Using information from existing columns, we will create new columns which will hold information regarding Points earned, game win/loss/draw, total matches played etc.
 4. Once we have all required information to create position table and to find best scoring team for all the seasons, we will concat away team dataframe with home team dataframe to generate desired results.
 
-![EPL ETL Process FLow](ETP-ETL-Process.PNG)
+![EPL ETL Process FLow](ETP-ETL-Process.png)
+
+### Load
+1. Once the data transformation is complete, output file will be generated.
+2. Output file is in excel format as it is easy to filter data and read.
